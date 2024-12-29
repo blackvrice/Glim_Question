@@ -1,0 +1,23 @@
+#include <string>
+#include <cmath>
+#include <vector>
+
+using namespace std;
+
+long long solution(int r1, int r2) {
+    long long answer = 0;
+    long long a = r1;
+    long long b = r2;
+    a *= a;
+    b *= b;
+    for(long long i = 1l; i <= r2; i++){
+		long long min = ceil(sqrt(a - i*i));
+		long long max = floor(sqrt(b - i*i));
+
+
+		answer += (max - min + 1);
+    }
+
+
+    return answer*4;
+}

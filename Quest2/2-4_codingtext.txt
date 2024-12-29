@@ -1,0 +1,17 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int a, int b) {
+    int n1 = a, n2 = b;
+    for(int i = 1; b/i > 0; i*= 10){
+        n1 *= 10;
+    }
+    for(int i = 1; a/i > 0; i*= 10){
+        n2 *= 10;
+    }
+    n1 += b;
+    n2 += a;
+    return n1 > n2 ? n1 : n2;
+}
